@@ -48,6 +48,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
 #           tags: ghcr.io/${{ github.repository }}:${{ matrix.db-type }}-${{ inputs.version }}, ghcr.io/${{ github.repository }}:${{ matrix.db-type }}-latest
           build-args: DATABASE_TYPE=${{ matrix.db-type }}
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:${{ matrix.db-type }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:${{ matrix.db-type }}-latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:buildcache,mode=max
